@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Ngô Bảo Real</title>
+    <link rel="icon" href="img/ngobaoreal.vn2.png" class="w-100">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round|Dancing+Script|Alegreya+Sans|Amatic+SC|Josefin+Sans|Quicksand|Poiret+One|Nunito|Cinzel|Montserrat" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-white">
+    <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+
+
+<!-- Navbar Start -->
+    <div class="container-fluid nav-bar bg-transparent">
+            <nav class="navbar navbar-expand-lg navbar-light py-0 px-4">
+                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                    <img src="https://truststone.blob.core.windows.net/images/4952845e-27da-47c4-840e-09530fa46a0e/0f3e24292ce7445cabf69cf5661a9afa.png"
+                        alt="">
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
+                        <a href="about.html" class="nav-item nav-link">Giới thiệu</a>
+                        <div class="nav-item dropdown">
+                            <a href="blog.html" id="project-link" class="nav-link dropdown-toggle">Bài viết</a>
+                            <div class="dropdown-menu rounded-0 m-0" style="background-color: #E4A852; border: none;">
+                                <a href="blog.html#bvphobien" class="dropdown-item">Phổ biến nhất</a>
+                                <a href="blog.html#bvtintuc" class="dropdown-item" id="tintuc">Tin tức</a>
+                                <a href="blog.html#bvkinhnghiemdautu" class="dropdown-item" id="kinhnghiemdautu">Kinh nghiệm đầu tư</a>
+                                <a href="blog.html#bvchuyendautu" class="dropdown-item" id="chuyendautu">Chuyện đầu tư</a>
+                                <a href="blog.html#bvfile" class="dropdown-item" id="bvfile">File báo cáo thị trường</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="duan.html" id="project-link" class="nav-link dropdown-toggle">Dự án</a>
+                            <div class="dropdown-menu rounded-0 m-0" style="background-color: #E4A852; border: none;">
+                                <a href="duan.html#duanhanghieu" class="dropdown-item" id="hanghieu">Branded Residences</a>
+                                <a href="duan.html#duandahoanthanh" class="dropdown-item" id="dahoanthanh">Dự án đã hoàn
+                                    thành</a>
+                                <a href="duan.html#duandangtrienkhai" class="dropdown-item" id="dangtrienkhai">Dự án đang
+                                    triễn khai</a>
+                            </div>
+                        </div>
+                        <a href="kygui.html" class="nav-item nav-link" target="_blank">Ký gửi</a>
+                        <a href="ungtuyen.html" class="nav-item nav-link">Tuyển dụng</a>
+                        <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+                    </div>
+                    <a href="" class="btn btn-primary px-3 d-none d-lg-flex"><i class="fa-regular fa-user"></i></a>
+                </div>
+            </nav>
+        </div>
+<!-- Navbar End -->
+
+
+        <!-- Header Start -->
+        <div class="container-fluid header bg-white p-0">
+            <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+                <div class="col-md-6 p-5 mt-lg-5">
+                    <h1 class="display-5 animated fadeIn mb-4">Ngô Bảo Real bài viết</h1> 
+                        <nav aria-label="breadcrumb animated fadeIn">
+                        <ol class="breadcrumb text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item text-body active" aria-current="page">Bài viết</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-md-6 animated fadeIn">
+                    <img class="img-fluid" src="img/ngobao6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+        <!-- bai viet don -->
+        <div class="container noi-dung mt-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="bai-viet">
+                        <div class="tags pb-5" style="color: #ccc;">
+                        <span>#themartqd1</span> <span>#canhoquan1</span>
+                        </div>
+                        <h1 class="tieu-de text-light">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM</h1>
+                        <p>Ngày đăng: 14/09/2023</p>
+                        <p>Tác giả: Ngô Bảo</p>
+                        <img src="img/ngobao7.jpg" alt="Hình ảnh bài viết" class="anh-bai-viet">
+                        <p class="noi-dung-bai-viet">
+                            <h2>The MarQ District 1 - Nơi trải nghiệm đẳng cấp, nơi bạn gọi là "ngôi nhà."</h2>
+                            <p>The MarQ District 1 là một dự án căn hộ chất lượng tại trung tâm Quận 1, thành phố Hồ Chí Minh. Với vị trí đắc địa và tiện ích hiện đại, nơi đây hứa hẹn mang đến trải nghiệm sống hoàn hảo cho cư dân và du khách. Tôi đã có cơ hội trải nghiệm một ngày tại đây và dưới đây là chia sẻ của tôi.</p>
+
+                            <h6>Buổi Sáng: Thư Giãn Tại Hồ Bơi</h6>
+                            <p>Ngày bắt đầu bằng việc thư giãn tại hồ bơi của The MarQ District 1. Hồ bơi lớn và thoải mái với cảnh quan tuyệt đẹp đã mang lại sự thư thái cho tôi. Tôi có thể nghỉ ngơi trên ghế dài bên bể bơi, ngắm nhìn toàn cảnh thành phố và tận hưởng ánh nắng mặt trời sớm.</p>
+
+                            <h6>Buổi Trưa: Ăn Trưa Tại Nhà Hàng MarQ</h6>
+                            <p>Sau khi tận hưởng buổi sáng tại hồ bơi, tôi đã dự định ăn trưa tại nhà hàng MarQ. Nhà hàng này nổi tiếng với các món ăn ngon và phục vụ nhiều món ăn đa dạng từ đủ các nền văn hóa. Tôi đã thử một món ăn Việt Nam truyền thống và không thể quên hương vị tuyệt vời của nó.</p>
+
+                            <h6>Buổi Chiều: Thư Giãn Tại Công Viên</h6>
+                            <p>Sau bữa trưa ngon miệng, tôi quyết định dành thời gian thư giãn tại công viên cách The MarQ District 1 không xa. Công viên này là nơi lý tưởng để thư giãn, đọc sách hoặc thậm chí tham gia vào một trò chơi bóng đá với bạn bè. Cảm giác mát mẻ và cây cỏ xanh mướt làm tôi cảm thấy thật sảng khoái.</p>
+
+                            <h6>Buổi Tối: Dạo Chơi Quận 1</h6>
+                            <p>Buổi tối, tôi quyết định khám phá thêm khu vực quận 1. Quận 1 nổi tiếng với đời sống về đêm sôi động và các nhà hàng, quán bar sang trọng. Tôi đã ghé thăm một số địa điểm nổi tiếng và thưởng thức những món ăn ngon tại đây.</p>
+
+                            <h6>Kết Luận</h6>
+                            <p>Ngày trải nghiệm tại The MarQ District 1 thực sự là một trải nghiệm đáng nhớ. Vị trí tốt, tiện ích đa dạng và không gian thoải mái đã tạo nên một ngày thư giãn và thú vị. Nếu bạn đến thành phố Hồ Chí Minh và muốn tận hưởng cuộc sống đô thị cao cấp, The MarQ District 1 là lựa chọn tuyệt vời.</p>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bai-viet-gan-day">
+                        <h2 class="text-dark">Bài viết gần đây</h2>
+                        <hr>
+                        <ul class="danh-sach-bai-viet-gan-day">
+                            <li class="li-bai-viet-gan-day"><a href="#">Cuộc sống của cư dân tại The Global City trong tương lai sẽ thế nào</a></li>
+                            <hr>
+                            <li class="li-bai-viet-gan-day"><a href="#">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM</a></li>
+                            <hr>
+                            <li class="li-bai-viet-gan-day"><a href="#">Quận 1 hiện có những dự án căn hộ hạng sang nào và Nên chọn dự án nào ở thời điểm hiện tại ?</a></li>
+                            <hr>
+                            <li class="li-bai-viet-gan-day"><a href="#">Quận 1 hiện có những dự án căn hộ hạng sang nào và Nên chọn dự án nào ở thời điểm hiện tại ?</a></li>
+                            <hr>
+                            <!-- Thêm các liên kết cho các bài viết gần đây -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end bai viet don -->
+
+         <!-- bai lien quan -->
+         <div class="text-center mx-auto mt-5 mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Bài viết liên quan</h1>
+            <p>Khám phá các nội dung liên quan</p>
+        </div>
+        <div class="bai-viet-lq me-5 ms-5">
+            <div class="bai-viet-lq-list">
+                <div class="post-single me-3 mt-5 mb-5 ms-3">
+                    <div class="post card">
+                        <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
+                        <div class="card-body d-grid justify-content-center">
+                            <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
+                            </h5>
+                            <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Ngày đăng: 14/09/2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bai-viet-lq-list">
+                <div class="post-single me-3 mt-5 mb-5 ms-3">
+                    <div class="post card">
+                        <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
+                        <div class="card-body d-grid justify-content-center">
+                            <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
+                            </h5>
+                            <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Ngày đăng: 14/09/2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bai-viet-lq-list">
+                <div class="post-single me-3 mt-5 mb-5 ms-3">
+                    <div class="post card">
+                        <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
+                        <div class="card-body d-grid justify-content-center">
+                            <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
+                            </h5>
+                            <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Ngày đăng: 14/09/2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bai-viet-lq-list">
+                <div class="post-single me-3 mt-5 mb-5 ms-3">
+                    <div class="post card">
+                        <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
+                        <div class="card-body d-grid justify-content-center">
+                            <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
+                            </h5>
+                            <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Ngày đăng: 14/09/2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bai-viet-lq-list">
+                <div class="post-single me-3 mt-5 mb-5 ms-3">
+                    <div class="post card">
+                        <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
+                        <div class="card-body d-grid justify-content-center">
+                            <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
+                            </h5>
+                            <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Ngày đăng: 14/09/2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end bai lien quan -->
+        
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="d-grid text-center justify-content-center mb-5">
+                    <p>chuyên gia đầu tư và phát triển bất động sản.</p>
+                    <h3 class="text-white footer-text">NGÔ BẢO REAL</h3>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="text-light mb-4">Ngô Bảo Real</h5>
+                        <p class="mb-2">Nơi sản phẩm Bất động sản xứng tầm giá trị được tìm thấy. Bảo chỉnh chu trong từng chi tiết công việc và đồng hành cùng quý khách để đảm bảo giá trị được bền vững xuyên suốt vòng đời sản phẩm.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Dự án</h5>
+                        <a class="btn btn-link text-white-50" href="">The MarQ</a>
+                        <a class="btn btn-link text-white-50" href="">Thủ thiêm Zeit River</a>
+                        <a class="btn btn-link text-white-50" href="">The Global City</a>
+                        <a class="btn btn-link text-white-50" href="">Lumiere Boulevard</a>
+                        <a class="btn btn-link text-white-50" href="">Masteri Centre Point</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Vị trí</h5>
+                        <a class="btn btn-link text-white-50" href="">Trung Tâm</a>
+                        <a class="btn btn-link text-white-50" href="">Khu Thủ Thiêm</a>
+                        <a class="btn btn-link text-white-50" href="">TP. Thủ Đức (Q2)</a>
+                        <a class="btn btn-link text-white-50" href="">TP. Thủ Đức (Q9)</a>
+                        <a class="btn btn-link text-white-50" href="">Biển Hồ Tràm</a>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="text-white mb-4">Liên hệ</h5>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@ngobaorealty"><i class="fa-brands fa-tiktok"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/ngobaoreal"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ngobaoreal/"><i class="fa-brands fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-12 text-center text-md-start mb-3 mb-md-0 d-flex justify-content-center">
+                            &copy; <a class="border-bottom" href="#">Ngobaoreal.vn</a>, All Right Reserved.
+
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="https://www.facebook.com/ku.396/">baoquantran</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- cotact -->
+        <div class="contact-buttons">
+            <a href="tel:+84 383144668" class="contact-button-phone shake-phone">
+                <!-- Thêm class "shake-phone" để áp dụng hiệu ứng lắc lắc -->
+                <i class="fa fa-phone"></i>
+                <div class="ring-animation-phone"></div>
+            </a>
+            <a href="https://zalo.me/0339321355" class="contact-button-gm">
+                <img src="img/zalo4.png" alt="">
+                <div class="ring-animation-gm"></div>
+            </a>
+            <a href="https://www.facebook.com/ngobaoreal" class="contact-button-fb">
+                <i class="fa-brands fa-facebook-f"></i>
+                <div class="ring-animation-fb"></div>
+            </a>
+        </div>
+        <!-- end contact -->
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web của Tôi</title>
+    <!-- Liên kết Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Liên kết Bootstrap JS và Popper.js (để sử dụng dropdown) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Thêm CSS tùy chỉnh cho trang của bạn ở đây */
+        body {
+            height: 3000px;
+        }
+
+        .thanh-dieu-huong {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        /* CSS cho hiển thị nút menu trên màn hình nhỏ */
+        .navbar-toggler {
+            background-color: #007bff;
+        }
+
+        /* Thêm CSS để hiển thị form nằm dưới thanh điều hướng */
+        .form-menu {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-menu .form-group {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            flex: 1; /* Chia đều không gian cho các input */
+        }
+
+        .form-menu .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        /* Thêm CSS cho thanh điều hướng khi nó được đóng lại */
+        .thanh-dieu-huong-collapsed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu ">
+        <nav class="navbar navbar-expand-lg thanh-dieu-huong bg-danger" id="thanhDieuHuong">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuChinh" aria-controls="menuChinh" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuChinh">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dịch vụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hiển thị form nằm ngang dưới thanh điều hướng -->
+        
+    </div>
+
+    <script>
+        // Lấy phần tử thanh điều hướng và form menu
+        const thanhDieuHuong = document.getElementById('thanhDieuHuong');
+        const formMenu = document.querySelector('.form-menu');
+
+        // Xác định chiều cao ban đầu của thanh điều hướng
+        const initialNavbarHeight = thanhDieuHuong.clientHeight;
+
+        // Bắt sự kiện cuộn trang
+        window.addEventListener('scroll', () => {
+            // Lấy vị trí hiện tại của trang
+            const scrollY = window.scrollY;
+
+            // Nếu cuộn xuống đủ xa, thêm lớp CSS để thanh điều hướng đứng im
+            if (scrollY > initialNavbarHeight) {
+                thanhDieuHuong.classList.add('thanh-dieu-huong-collapsed');
+                formMenu.style.marginTop = initialNavbarHeight + 'px';
+            } else {
+                // Ngược lại, loại bỏ lớp CSS và đưa thanh điều hướng về vị trí ban đầu
+                thanhDieuHuong.classList.remove('thanh-dieu-huong-collapsed');
+                formMenu.style.marginTop = '0';
+            }
+        });
+    </script>
+</body>
+</html>
