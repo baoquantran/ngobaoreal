@@ -1045,4 +1045,38 @@ img {
     text-transform: uppercase;
 }
 
-
+/* -----------------------------------masteries------------------------------ */
+.masteries-anh{
+    margin-top: 120px;
+   
+}
+.masteries-anh img{
+    max-width: 100%;
+}
+.masteries p{
+  margin-top: 30px ; 
+}
+.masteries img{
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+.masteries-so{
+    font-size: 30px;
+    font-weight: 900px;
+}
+.chudautu {
+    background: rgba(0, 0, 0, 0.7) url(https://theglobalcity.co/wp-content/uploads/2023/06/the-global-city.jpg);
+    background-blend-mode: multiply; /* Làm cho màu đen nằm trên hình ảnh */
+    height: 600px; /* Chiều cao mặc định */
+    @media (max-width: 1000px) {
+        height: 1000px; /* Tăng chiều cao khi màn hình còn 900px */
+    }
+}
+.chudautu h1 , h4{
+font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+.MASTERISE-anh img{
+    max-width: 100%;
+}
