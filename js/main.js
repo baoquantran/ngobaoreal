@@ -253,37 +253,32 @@ $(document).ready(function() {
 });
 
 
-$('#popular').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvphobien').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
-$('#news').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvtintuc').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
-$('#investmentexperience').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvkinhnghiemdautu').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
-$('#investmentstory').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvchuyendautu').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
-$('#files').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvfile').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
 
+// duannnn-detail----------------------------------------------
+$('#linkvitri').click(function() {
+    // Sử dụng jQuery để cuộn mượt mà đến phần tử
+    $('html, body').animate({
+        scrollTop: $('#vitri').offset().top
+    }, 1000); // 1000 là tốc độ cuộn (1 giây)
+});
+$('#linktongquan').click(function() {
+    // Sử dụng jQuery để cuộn mượt mà đến phần tử
+    $('html, body').animate({
+        scrollTop: $('#tongquan').offset().top
+    }, 1000); // 1000 là tốc độ cuộn (1 giây)
+});
+$('#linktienich').click(function() {
+    // Sử dụng jQuery để cuộn mượt mà đến phần tử
+    $('html, body').animate({
+        scrollTop: $('#tienich').offset().top
+    }, 1000); // 1000 là tốc độ cuộn (1 giây)
+});
+$('#linklienhe').click(function() {
+    // Sử dụng jQuery để cuộn mượt mà đến phần tử
+    $('html, body').animate({
+        scrollTop: $('#lienhe').offset().top
+    }, 1000); // 1000 là tốc độ cuộn (1 giây)
+});
 
 //////////////danh muc scroll
 const fixedCategory = document.querySelector('.fixed-category');

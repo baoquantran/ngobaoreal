@@ -1,81 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Active Effect</title>
-    <style>
-        /* CSS cho hiệu ứng hover */
-        .navbar-nav .nav-link:hover {
-            color: #ff0000; /* Thay đổi màu sắc khi di chuột qua */
-            transition: color 0.3s; /* Tạo hiệu ứng mượt mà */
-        }
-
-        /* CSS cho hiệu ứng active */
-        .navbar-nav .nav-link.active {
-            color: #00ff00 !important; /* Thay đổi màu sắc khi liên kết được chọn */
-            font-weight: bold; /* In đậm khi liên kết được chọn */
-        }
-    </style>
-</head>
-<body>
-    <div class="collapse navbar-collapse" id="menuChinh">
-        <ul class="navbar-nav m-auto">
-            <li class="nav-item p-2">
-                <a class="nav-link text-menu text-white" href="MASTERISECENTERPOINT.html">masterise center point</a>
-            </li>
-            <li class="nav-item p-2">
-                <a class="nav-link text-menu text-white" href="lumiere-boulevard.html">lumiere boulevard</a>
-            </li>
-            <li class="nav-item p-2">
-                <a class="nav-link text-menu text-white" href="#">the manhattan vinhomes</a>
-            </li>
-            <li class="nav-item p-2">
-                <a class="nav-link text-menu text-white" href="#"> LUMIÈRE Riverside</a>
-            </li>
-            <li class="nav-item p-2">
-                <a class="nav-link text-menu text-white" href="#"> Delasol</a>
-            </li>
-            <li class="nav-item p-2">
-                <a class="nav-link text-menu text-white" href="#"> The Marq </a>
-            </li>
-            <li class="nav-item p-2">
-                <a class="nav-link text-menu text-white" href="kygui.html">Ký gửi</a>
-            </li>
-        </ul>
-    </div>
-
+    <title>Trình Soạn Thảo Văn Bản với TinyMCE</title>
+    <!-- Nhúng thư viện TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
-        // Lấy danh sách tất cả các liên kết trong navbar
-        var links = document.querySelectorAll('.navbar-nav .nav-link');
+        // Khởi tạo trình soạn thảo TinyMCE
+        tinymce.init({
+            selector: 'textarea',
+            height: 400,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help | image', // Thêm "image" vào thanh công cụ
+            content_css: 'css/content.css',
+            images_upload_url: 'upload.php', // Đường dẫn đến tệp PHP xử lý việc tải ảnh lên
+            images_upload_base_path: '/uploads', // Thư mục lưu trữ ảnh
+            images_upload_credentials: true,
+            images_upload_handler: function (blobInfo, success, failure) {
+                var xhr, formData;
 
-        // Kiểm tra xem có trạng thái "active" được lưu trong localStorage không
-        var activeLink = localStorage.getItem('activeLink');
+                xhr = new XMLHttpRequest();
+                xhr.withCredentials = false;
+                xhr.open('POST', 'upload.php'); // Đường dẫn đến tệp PHP xử lý việc tải ảnh lên
 
-        // Nếu có trạng thái "active", thiết lập nó
-        if (activeLink) {
-            links.forEach(function(link) {
-                if (link.getAttribute('href') === activeLink) {
-                    link.classList.add('active');
-                }
-            });
-        }
+                xhr.onload = function () {
+                    var json;
 
-        // Thêm sự kiện click cho từng liên kết
-        links.forEach(function(link) {
-            link.addEventListener('click', function() {
-                // Loại bỏ lớp "active" từ tất cả các liên kết
-                links.forEach(function(link) {
-                    link.classList.remove('active');
-                });
+                    if (xhr.status != 200) {
+                        failure('HTTP Error: ' + xhr.status);
+                        return;
+                    }
 
-                // Thêm lớp "active" cho liên kết đang được bấm
-                this.classList.add('active');
+                    json = JSON.parse(xhr.responseText);
 
-                // Lưu trạng thái "active" vào localStorage
-                localStorage.setItem('activeLink', this.getAttribute('href'));
-            });
+                    if (!json || typeof json.location != 'string') {
+                        failure('Invalid JSON: ' + xhr.responseText);
+                        return;
+                    }
+
+                    success(json.location);
+                };
+
+                formData = new FormData();
+                formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+                xhr.send(formData);
+            }
         });
     </script>
+</head>
+<body>
+    <header>
+        <h1>Trình Soạn Thảo Văn Bản với TinyMCE</h1>
+    </header>
+    <main>
+        <textarea></textarea>
+    </main>
+    <footer>
+        <p>© 2023 Trình soạn thảo văn bản với TinyMCE. Tất cả các quyền được bảo lưu.</p>
+    </footer>
 </body>
 </html>
+
