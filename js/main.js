@@ -228,34 +228,28 @@ $('#dahoanthanh').click(function() {
 });
 
 // ---------------------------------sctrolldenbaiviet----------------------------------
-$('#phobien').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvphobien').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
-$('#tintuc').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvtintuc').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
-$('#kinhnghiemdautu').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvkinhnghiemdautu').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
-$('#chuyendautu').click(function() {
-    // Sử dụng jQuery để cuộn mượt mà đến phần tử
-    $('html, body').animate({
-        scrollTop: $('#bvchuyendautu').offset().top
-    }, 1000); // 1000 là tốc độ cuộn (1 giây)
-});
-$('#file').click(function(event) {
-    event.preventDefault();
-    var targetUrl = $(this).attr('href');
-    window.location.href = targetUrl;
+$(document).ready(function() {
+    // Bắt sự kiện click cho các liên kết
+    $('#phobien, #tintuc, #kinhnghiemdautu, #chuyendautu, #file').click(function() {
+        // Loại bỏ class "active" từ tất cả các liên kết
+        $('#phobien, #tintuc, #kinhnghiemdautu, #chuyendautu, #file').removeClass('active');
+        
+        // Thêm class "active" cho liên kết được nhấn
+        $(this).addClass('active');
+        
+        // Kiểm tra nếu liên kết là '#file', thì ngăn chặn mặc định
+        if ($(this).attr('id') === 'file') {
+            event.preventDefault();
+            var targetUrl = $(this).attr('href');
+            window.location.href = targetUrl;
+        } else {
+            // Nếu không phải là '#file', thì cuộn mượt mà đến phần tử liên quan
+            var targetId = $(this).attr('href');
+            $('html, body').animate({
+                scrollTop: $(targetId).offset().top
+            }, 1000); // 1000 là tốc độ cuộn (1 giây)
+        }
+    });
 });
 
 
@@ -296,7 +290,7 @@ const fixedCategory = document.querySelector('.fixed-category');
 
 function handleScroll() {
     if (window.innerWidth >= 980) { // Chỉ thực hiện khi màn hình rộng hơn hoặc bằng 768px
-        if (window.scrollY >= 2000 && window.scrollY < 6500) {
+        if (window.scrollY >= 2000 && window.scrollY < 3500) {
             fixedCategory.classList.add('fixed');
         } else {
             fixedCategory.classList.remove('fixed');
@@ -323,3 +317,6 @@ window.addEventListener('scroll', () => {
         formMenu.classList.remove('form-menu-hidden');
     }
 });
+
+
+///modal
