@@ -319,4 +319,19 @@ window.addEventListener('scroll', () => {
 });
 
 
-///modal
+// Lấy danh sách tất cả các liên kết trong navbar
+var links = document.querySelectorAll('.navbar-nav .nav-link');
+
+// Lặp qua từng liên kết
+links.forEach(function(link) {
+    // Thêm sự kiện click cho từng liên kết
+    link.addEventListener('click', function() {
+        // Loại bỏ lớp "active" từ tất cả các liên kết
+        links.forEach(function(link) {
+            link.classList.remove('active');
+        });
+
+        // Thêm lớp "active" cho liên kết đang được bấm
+        this.classList.add('active');
+    });
+});

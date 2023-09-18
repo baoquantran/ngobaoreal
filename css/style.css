@@ -1246,11 +1246,20 @@ img {
     margin-top: 300px;
 }
 .text-menu{
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
+    text-transform: uppercase;;
 }
+ /* CSS cho hiệu ứng hover */
+ .text-menu:hover {
+    color: #ff0000; /* Thay đổi màu sắc khi di chuột qua */
+    transition: color 0.3s; /* Tạo hiệu ứng mượt mà */
+}
+
+/* CSS cho hiệu ứng active */
+ .text-menu.active{
+    color: var(--dark) !important; /* Thay đổi màu sắc khi liên kết được chọn */
+    font-weight: bold; /* In đậm khi liên kết được chọn */
+}
+
 
 /* -----------------------------------masteries------------------------------ */
 .masteries-anh{

@@ -1,35 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chức năng Tìm kiếm bằng JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Active Effect</title>
+    <style>
+        /* CSS cho hiệu ứng hover */
+        .navbar-nav .nav-link:hover {
+            color: #ff0000; /* Thay đổi màu sắc khi di chuột qua */
+            transition: color 0.3s; /* Tạo hiệu ứng mượt mà */
+        }
+
+        /* CSS cho hiệu ứng active */
+        .navbar-nav .nav-link.active {
+            color: #00ff00 !important; /* Thay đổi màu sắc khi liên kết được chọn */
+            font-weight: bold; /* In đậm khi liên kết được chọn */
+        }
+    </style>
 </head>
 <body>
-    <h1>Danh sách sản phẩm</h1>
-    <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm">
-    <ul id="productList">
-        <li>Sản phẩm 1</li>
-        <li>Sản phẩm 2</li>
-        <li>Sản phẩm 3</li>
-        <li>Sản phẩm 4</li>
-        <li>Sản phẩm 5</li>
-    </ul>
+    <div class="collapse navbar-collapse" id="menuChinh">
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item p-2">
+                <a class="nav-link text-menu text-white" href="MASTERISECENTERPOINT.html">masterise center point</a>
+            </li>
+            <li class="nav-item p-2">
+                <a class="nav-link text-menu text-white" href="lumiere-boulevard.html">lumiere boulevard</a>
+            </li>
+            <li class="nav-item p-2">
+                <a class="nav-link text-menu text-white" href="#">the manhattan vinhomes</a>
+            </li>
+            <li class="nav-item p-2">
+                <a class="nav-link text-menu text-white" href="#"> LUMIÈRE Riverside</a>
+            </li>
+            <li class="nav-item p-2">
+                <a class="nav-link text-menu text-white" href="#"> Delasol</a>
+            </li>
+            <li class="nav-item p-2">
+                <a class="nav-link text-menu text-white" href="#"> The Marq </a>
+            </li>
+            <li class="nav-item p-2">
+                <a class="nav-link text-menu text-white" href="kygui.html">Ký gửi</a>
+            </li>
+        </ul>
+    </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const searchInput = document.getElementById("searchInput");
-            const productList = document.getElementById("productList").getElementsByTagName("li");
+        // Lấy danh sách tất cả các liên kết trong navbar
+        var links = document.querySelectorAll('.navbar-nav .nav-link');
 
-            searchInput.addEventListener("input", function() {
-                const searchTerm = searchInput.value.toLowerCase();
+        // Kiểm tra xem có trạng thái "active" được lưu trong localStorage không
+        var activeLink = localStorage.getItem('activeLink');
 
-                Array.from(productList).forEach(function(product) {
-                    const productName = product.textContent.toLowerCase();
-                    if (productName.includes(searchTerm)) {
-                        product.style.display = "block";
-                    } else {
-                        product.style.display = "none";
-                    }
+        // Nếu có trạng thái "active", thiết lập nó
+        if (activeLink) {
+            links.forEach(function(link) {
+                if (link.getAttribute('href') === activeLink) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Thêm sự kiện click cho từng liên kết
+        links.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Loại bỏ lớp "active" từ tất cả các liên kết
+                links.forEach(function(link) {
+                    link.classList.remove('active');
                 });
+
+                // Thêm lớp "active" cho liên kết đang được bấm
+                this.classList.add('active');
+
+                // Lưu trạng thái "active" vào localStorage
+                localStorage.setItem('activeLink', this.getAttribute('href'));
             });
         });
     </script>
